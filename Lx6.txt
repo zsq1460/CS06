@@ -1,0 +1,93 @@
+﻿C#企业级开发技术练习6答题卡
+
+班级：  19信管1班   
+姓名：张舒倩     
+学号：20190307137     
+
+注：请将答案放置在序号下方。*/
+
+（一）  class Teacher<T>
+    {
+        public void field(string fieldName, T t)
+        {
+            Console.WriteLine($"{fieldName}:{t},类型是{t.GetType().Name}");
+        }
+    }
+    class Program
+    { 
+
+
+        static void Main(string[] args)
+        {
+            Teacher<String>t1 = new Teacher<String>();
+            t1.field("姓名", "zhao");
+            Teacher<Decimal> t2 = new Teacher<Decimal>();
+            t2.field("工资",8202.34M);
+            Teacher<Boolean> t3 = new Teacher<Boolean>();
+            t3.field("编制", false);
+            Teacher<Single> t4 = new Teacher<Single>();
+           t4.field("评价", 90.23F);
+            Teacher<DateTime> t5 = new Teacher<DateTime>();
+           t5.field("工作日期",DateTime .Parse( "2001/8/31 0:00:00"));
+
+
+
+
+
+
+
+
+
+
+          
+        }
+    }
+}
+
+
+
+（二）interface IPay<P, Q>
+
+    {
+        void Log(P x, Q y);
+    }
+    class Employee<T> : IPay<T, string>
+    {
+        public void Log(T pay, string name) =>
+            Console.WriteLine($"{name}:{pay},类型是{pay.GetType().Name}");
+            }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee<int> p1 = new Employee<int>();
+            p1.Log(30000, "年终奖");
+            Employee<Decimal> P2 = new Employee<Decimal>();
+            P2.Log(54321.67M, "核增绩效");
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+
+          
+        }
+    }
+}
+
+
+
+
+
